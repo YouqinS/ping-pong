@@ -1,4 +1,4 @@
-IMAGE_TAG=exercise_3.01
+IMAGE_TAG=exercise_1.09
 IMAGE_NAME_WITH_TAG=pingpong:$(IMAGE_TAG)
 
 all: package  image  push-image
@@ -18,6 +18,3 @@ push-image:
 
 run:
 	./mvnw org.springframework.boot:spring-boot-maven-plugin:run
-
-start-postgres:
-

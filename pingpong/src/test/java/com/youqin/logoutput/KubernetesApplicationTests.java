@@ -1,4 +1,4 @@
-package com.youqin.pingpong;
+package com.youqin.logoutput;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

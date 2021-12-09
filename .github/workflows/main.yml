@@ -10,9 +10,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
+    - name: package
+      run: |-
+          echo $(pwd)
+          ls -al
+          cd pingpong && ./mvnw clean package -Dmaven.test.skip=true
+    - name: Upload jar
+      uses: actions/upload-artifact@v1
+      with:
+        name: jar
+        path: pingpong/target
+
       - uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "ping-pong-app"
           heroku_email: ${{secrets.HEROKU_EMAIL}}
           usedocker: true
+          dockerfile_name: Dockerfile

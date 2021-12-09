@@ -27,7 +27,7 @@ jobs:
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "ping-pong-app"
-          heroku_email: ${{secrets.HEROKU_EMAIL}}
+          email: ${{secrets.HEROKU_EMAIL}}
           usedocker: true
           dockerfile_directory: ./pingpong
           dockerfile_name: Dockerfile
